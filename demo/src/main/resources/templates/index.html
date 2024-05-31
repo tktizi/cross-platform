@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Spring!</title>
+</head>
+<body>
+    <div th:text="${user.getName()}"></div>
+
+    <div th:text="${capitalsOfTheWorld.Belgium}"></div>
+    <div th:text="${capitalsOfTheWorld['The Netherlands']}"></div>
+
+    <div th:text="${vehiclesList[0].name}"></div>
+
+    <h1 th:text="#{dashboard.title}"></h1>
+
+    <div th:object="${car}">
+        <p>Brand: <span th:text="*{brand}"></span></p>
+        <p>Type: <span th:text="*{type}"></span></p>
+        <p>Fuel: <span th:text="*{fuelType}"></span></p>
+        <p>Color: <span th:text="*{color}"></span></p>
+    </div>
+
+    <a th:href="@{https://www.google.com/search(q=${searchTerm})}">Search</a>
+
+    <div th:id="|container-${index}|"></div>
+
+    <span>The total price is [[${totalPrice}]]</span>
+
+    <div th:text="${username}">Bob</div>
+
+    <div th:id="|container-${userId}|"></div>
+
+    <div th:if="${user.followerCount > 10}">You are famous</div>
+
+    <div th:unless="${user.followerCount > 0}">You have no followers currently.</div>
+
+    <ul>
+        <li th:each="language : ${languages}" th:text="${language.name}"></li>
+    </ul>
+
+    <h1 th:text="#{__${title}__}"></h1>
+</body>
+</html>

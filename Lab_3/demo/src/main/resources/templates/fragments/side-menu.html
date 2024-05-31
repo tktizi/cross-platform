@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="uk">
+<body>
+<aside th:fragment="side-menu" class="sidebar bg-white border-r border-gray-200">
+    <div class="h-full px-3 pb-4 overflow-y-auto">
+        <ul class="space-y-2 font-medium">
+            <li th:replace="~{fragments/menu-item :: menu-item('Dashboard', '/dashboard', '/svg/dashboard-icon.svg')}"></li>
+            <li th:replace="~{fragments/menu-item :: menu-item('Kanban', '/kanban', '/svg/kanban-icon.svg')}"></li>
+            <li th:replace="~{fragments/menu-item :: menu-item('Inbox', '/inbox', '/svg/inbox-icon.svg')}"></li>
+            <li th:replace="~{fragments/menu-item :: menu-item('File Manager', '/file-manager', '/svg/file-manager-icon.svg')}"></li>
+            <li th:replace="~{fragments/menu-item :: menu-item('Users', '/users', '/svg/users-icon.svg')}"></li>
+        </ul>
+    </div>
+</aside>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<li th:fragment="menu-item(title, link, svgPath)">
+    <a th:href="${link}" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+        <img th:src="@{${svgPath}}" class="w-5 h-5 mr-3" alt="icon"/>
+        [[${title}]]
+    </a>
+</li>
+</body>
+</html>

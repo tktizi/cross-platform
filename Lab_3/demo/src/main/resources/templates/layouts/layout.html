@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title layout:title-pattern="${LAYOUT_TITLE} - ${CONTENT_TITLE}">My Application</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" th:href="@{/css/application.css}">
+</head>
+<body class="h-full bg-gray-100">
+<nav th:replace="~{fragments/top-menu :: top-menu}"></nav>
+<aside th:replace="~{fragments/side-menu :: side-menu}"></aside>
+<section layout:fragment="page-content" class="ml-64 pt-20">
+
+</section>
+<script type="text/javascript" th:src="@{/webjars/alpinejs/dist/cdn.min.js}" defer></script>
+<script th:src="@{/js/drawer-toggle.js}"></script>
+<script th:src="@{/js/user-menu-button.js}"></script>
+</body>
+</html>
